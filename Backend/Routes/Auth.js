@@ -23,8 +23,8 @@ router.post(
   ],
   async (req, res) => {
     //if we find any error then display them
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
+    const result = validationResult(req);
+    if (!result.isEmpty()) {
       return res.status(404).json({ errors: result.array() });
     }
 
